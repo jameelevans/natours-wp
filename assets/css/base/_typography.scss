@@ -1,0 +1,190 @@
+@font-face {
+	font-family: 'natours';
+	src:  url('assets/fonts/natours.eot?ym695s');
+	src:  url('assets/fonts/natours.eot?ym695s#iefix') format('embedded-opentype'),
+	  url('assets/fonts/natours.ttf?ym695s') format('truetype'),
+	  url('assets/fonts/natours.woff?ym695s') format('woff'),
+	  url('assets/fonts/natours.svg?ym695s#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'natours' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-heart:before {
+	content: "\f004";
+  }
+  .icon-nature:before {
+	content: "\f4bf";
+  }
+  .icon-world:before {
+	content: "\f57c";
+  }
+  .icon-map:before {
+	content: "\f59f";
+  }
+  
+
+@font-face {
+	@include font-primary;
+	src: url('assets/fonts/Lato-Thin.ttf') format('ttf');
+	font-weight: 100;
+
+}
+
+@font-face {
+	@include font-italic;
+	src: url('assets/fonts/Lato-ThinItalic.ttf') format('ttf');
+	font-weight: 100;
+}
+
+@font-face {
+	@include font-primary;
+	src: url('assets/fonts/Lato-Light.ttf') format('ttf');
+	font-weight: 300;
+}
+
+@font-face {
+	@include font-italic;
+	src: url('assets/fonts/Lato-LightItalic.ttf') format('ttf');
+	font-weight: 300;
+}
+
+
+@font-face {
+	@include font-primary;
+	src: url('assets/fonts/Lato-Regular.ttf') format('ttf');
+	font-weight: 400;
+}
+
+@font-face {
+	@include font-italic;
+	src: url('assets/fonts/Lato-RegularItalic.ttf') format('ttf');
+	font-weight: 400;
+}
+
+@font-face {
+	@include font-primary;
+	src: url('assets/fonts/Lato-Bold.ttf') format('ttf');
+	font-weight: 700;
+}
+
+@font-face {
+	@include font-italic;
+	src: url('assets/fonts/Lato-BoldItalic.ttf') format('ttf');
+	font-weight: 700;
+}
+
+@font-face {
+	@include font-primary;
+	src: url('assets/fonts/Lato-Black.ttf') format('ttf');
+	font-weight: 900;
+}
+
+@font-face {
+	@include font-italic;
+	src: url('assets/fonts/Lato-BlackItalic.ttf') format('ttf');
+	font-weight: 900;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: $default-font-size;
+	line-height: 1.7;
+	color: $color-grey-dark;
+}
+
+.heading-primary {
+	color: #ffffff;
+	text-transform: uppercase;
+	backface-visibility: hidden;
+	margin-bottom: 6rem;
+
+	&--main {
+		display: block;
+		font-size: 6rem;
+		font-weight: 400;
+		letter-spacing: 3.5rem;
+
+		animation-name: moveInLeft;
+		animation-duration: 1s;
+		animation-timing-function: ease-out;
+
+		@include respond(phone) {
+			letter-spacing: 1rem;
+			font-size: 5rem;
+		}
+	}
+
+	&--sub {
+		display: block;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 1.75rem;
+		animation: moveInRight 1s ease-out;
+
+		@include respond(phone) {
+			letter-spacing: .5rem;
+		}
+	}
+}
+
+.heading-secondary {
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	font-weight: 700;	
+	display: inline-block;
+	color: $color-primary;
+	letter-spacing: .2rem;
+	transition: all .2s;
+
+	//If browsers support background-clip
+	@supports (background-clip: text) or (-webkit-background-clip: text) {
+		//Show text with gradient bg color
+		background-clip: text;
+		color: transparent;
+		background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+   }
+
+	@include respond(tab-port) {
+		font-size: 3rem;
+	}
+
+	@include respond(phone) {
+		font-size: 2.5rem;
+	}
+
+	&:hover {
+		transform: skewY(2deg) skewX(15deg) scale(1.1);
+		text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+	}
+}
+
+.heading-tertiary {
+	font-size: $default-font-size;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.paragraph {
+	font-size: $default-font-size;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}

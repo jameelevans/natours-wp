@@ -1,0 +1,120 @@
+/*
+Theme Name: Natours's Wordpress Theme'
+Theme URI: http://natours.jameelevans.com/
+Author: Jameel Evans
+Author URI: http://jameelevans.com
+Description: This theme was designed and coded by Jameel Evans.
+Version: 1.0
+Text Domain: jameelevans.com
+ */
+
+ /*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+| Abstracts |
+# Variables
+# Mixins
+# Functions
+
+| Base |
+# Typography 
+# Base --> Basic definition of project
+# Animations
+# Utilities
+
+| Components |
+# Buttons
+# Cards
+# Composition
+# Feature Box
+# Story
+# Background Video
+# Form
+# Popup
+
+| Layout |
+# Header
+# Grid
+# Footer
+# Navigation
+
+| Pages |
+# Home
+
+--------------------------------------------------------------*/
+
+/*--------| Abstracts |--------*/
+
+/* Variables */
+@import "abstracts/variables";
+
+ /* Mixins */
+ @import "abstracts/mixins";
+
+  /* Functions */
+  @import "abstracts/functions";
+
+
+/*--------| Base |--------*/
+
+ /* Typography */
+ @import "base/typography";
+
+ /* Global */
+ @import "base/base";
+
+/* Animations */
+@import "base/animations";
+
+/* Utilities */
+@import "base/utilities";
+
+
+/*---------| Components |---------*/
+
+/* Buttons */
+@import "component/buttons";
+
+/* Card */
+@import "component/card"; 
+
+/* Composition */
+@import "component/composition";
+
+/* Feature Box */
+@import "component/feature-box"; 
+
+/* Story */
+@import "component/story"; 
+
+/* Background Video */
+@import "component/bg-video"; 
+
+/* Form */
+@import "component/form"; 
+
+/* Popup */
+@import "component/popup"; 
+
+
+/*---------| Layout |---------*/
+
+/* Header */
+@import "layout/header";
+
+/* Grid */
+@import "layout/grid";
+
+/* Footer */
+@import "layout/footer";
+
+/* Navigation */
+@import "layout/navigation";
+
+
+/*---------| Pages |---------*/
+
+/* Home */
+@import "pages/home";
+
+

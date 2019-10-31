@@ -1,0 +1,117 @@
+.form {
+
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        //Form element dont inherit form styling like other elements, so we must make them
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        width: 90%;
+        display: block;
+        transition: all .3s;
+        //Reserve 3px on bottom border to prevent layout shift
+        border-bottom: 3px solid transparent;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+        
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+
+        &:focus {
+            //Remove browser added default outline 
+            outline: none;
+    
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+
+            //Set invalid entry form styling
+            &:invalid {
+                border-bottom: 3px solid $color-secondary-dark;
+            }
+        }
+
+        
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    //Using the adjacent sibling selector to select the lable (Lable must be after for this to work)
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+
+        //Moves lable up and down after text input
+        transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        width: 49%;
+        display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    //Hide original radio button (These can't be styled)
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    //Custom radio button
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        //Height and width will only work if you display as block or inline-block
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+        //Circle inside radio button
+        &::after{
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            @include absCenter;
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    //Select the sibling of the checked radio input, then its child 
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}
