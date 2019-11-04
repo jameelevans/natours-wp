@@ -52,7 +52,7 @@
 			<div class="header__textbox">
 				<h1 class="heading-primary">
 					<span class="heading-primary--main">Outdoors</span>
-					<span class="heading-primary--sub">is where life happens</span>
+					<span class="heading-primary--sub"><?php echo get_bloginfo('description'); ?></span>
 				</h1>
 
 				<a class="btn btn--white btn--animated" href="#tours">Discover our tours</a>
